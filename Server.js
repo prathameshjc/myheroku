@@ -8,6 +8,10 @@ function respond(req, res, next) {
 }
 
 server.get('/hello', respond);
+serve.get('/*',restify.plugins.serveStatic({
+  directory:'/build/client',
+  default:'index.html'
+}))
 // server.get(/\/?.*/, restify.plugins.serveStatic({
 //   directory: '../build'
 // }))
@@ -17,7 +21,7 @@ server.get('/hello', respond);
 //   appendRequestPath: false
 //  })
 // );
-server.pre(serve_static(path.join(__dirname, '..', 'build')))
+// server.pre(serve_static(path.join(__dirname, '..', 'build')))
 var port = process.env.PORT || 5000;
 server.listen(port, function() {
     console.log("Listening on " + port);
