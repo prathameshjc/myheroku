@@ -8,7 +8,7 @@ function respond(req, res, next) {
 }
 
 server.get('/hello', respond);
-serve.get('/*',restify.plugins.serveStatic({
+server.get('/*',restify.plugins.serveStatic({
   directory:'/build/client',
   default:'index.html'
 }))
