@@ -1,6 +1,7 @@
 //................restify server.......................
 var restify = require("restify");
 var server = restify.createServer();
+const path = require('path');
 
 function respond(req, res, next) {
     res.send('Hello Restify!');
