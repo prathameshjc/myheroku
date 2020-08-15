@@ -7,7 +7,7 @@ function respond(req, res, next) {
 }
 
 server.get('/hello', respond);
-server.get(/\/?.*/, restify.serveStatic({
+server.get(/\/?.*/, restify.plugins.serveStatic({
   directory: '../build'
 }))
 // server.get("/*", restify.plugins.serveStatic({
