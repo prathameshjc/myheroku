@@ -9,7 +9,7 @@ function respond(req, res, next) {
 
 server.get('/hello', respond);
 server.get(/\/?.*/, restify.plugins.serveStatic({
-  directory: './build/client',
+  directory: './build',
   default: 'index.html'
 }))
 // server.get('/*',restify.plugins.serveStatic({
