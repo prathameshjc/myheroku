@@ -7,7 +7,7 @@ function respond(req, res, next) {
 }
 
 server.get('/hello', respond);
-server.get(/^\/([a-zA-Z0-9_\.~-]+)\/(.*)/, restify.plugins.serveStatic({
+server.get("/*", restify.plugins.serveStatic({
   directory: __dirname+"/client/build",
   default: 'index.html',
   appendRequestPath: false
