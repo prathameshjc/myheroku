@@ -11,7 +11,10 @@
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "restify": "^8.5.1",
+    "restify-cors-middleware2": "^2.1.0",
+    "serve-static-restify": "^3.0.0"
   },
   "scripts": {
     "start": "node Server.js",
