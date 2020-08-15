@@ -10,12 +10,13 @@ server.get('/hello', respond);
 // server.get(/\/?.*/, restify.plugins.serveStatic({
 //   directory: '../build'
 // }))
-server.get("*", restify.plugins.serveStatic({
-  directory: __dirname+"/client/build",
-  default: 'index.html',
-  appendRequestPath: false
- })
-);
+// server.get("*", restify.plugins.serveStatic({
+//   directory: __dirname+"/client/build",
+//   default: 'index.html',
+//   appendRequestPath: false
+//  })
+// );
+server.pre(serve_static(path.join(__dirname, '..', 'build')))
 var port = process.env.PORT || 5000;
 server.listen(port, function() {
     console.log("Listening on " + port);
