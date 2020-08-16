@@ -34,15 +34,15 @@ passwordHandler=event=>{
 
       submitHandler=event=>{
         // const { username, uname, password, pass } = this.state;
-        const {history}=this.props;
-        const {username,password}=this.state;
-        if ((username==='admin') && (password==='pass')) {
-          console.log("Successfully Login")
-          history.push('./Datajc')
-        } else {
-          alert("Invalid Credentials")
-          console.log("Login Failed")
-        }
+        // const {history}=this.props;
+        // const {username,password}=this.state;
+        // if ((username==='admin') && (password==='pass')) {
+        //   console.log("Successfully Login")
+        //   history.push('./Datajc')
+        // } else {
+        //   alert("Invalid Credentials")
+        //   console.log("Login Failed")
+        // }
       
   const { username, uname, password, pass } = this.state;
   
