@@ -44,8 +44,7 @@ passwordHandler=event=>{
         //   console.log("Login Failed")
         // }
       
-  const { username, uname, password, pass } = this.state;
-  
+  // const { username, uname, password, pass } = this.state;
   const {history}=this.props;
   const {username,password}=this.state;
   if ((username==='admin') && (password==='pass')) {
