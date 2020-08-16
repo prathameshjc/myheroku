@@ -1,5 +1,5 @@
 import React from 'react';
-import Hrlogin from './component/Hrlogin'
+import Login from './component/Login'
 import {BrowserRouter as Router,Switch,  Route} from 'react-router-dom'
 import Datajc from './component/Datajc';
 import Infojc from './component/Infojc';
