@@ -31,70 +31,30 @@ passwordHandler=event=>{
   })
 }
 
-submitHandler=event=>{
-  var data = new FormData();
-  let {username,password}=this.state;
-  // var {history}=this.props;
-  
-  data.append("username",username)
-  data.append("password",password)
-  // var {history}=this.props;  
-//   var data = {
-//     username: "prathamesh",
-//     password: "admin",
-    
-// };
-  event.preventDefault()
-  var {history}=this.props;
-    console.log("----------------------",this.state);
-    
-		axios.post('http://localhost:8080/', data,{
-      headers: {'Content-Type':'application/json'}
-    }).then(function(res){
-      console.log("----------------------response",res);
-      let statuscode=res.status;
-      console.log('status code is :',statuscode)
-      switch(statuscode){
 
-        case 201: 
-          console.log("case 1")
+      submitHandler=event=>{
+        // const { username, uname, password, pass } = this.state;
+        const {history}=this.props;
+        const {username,password}=this.state;
+        if ((username==='admin') && (password==='pass')) {
+          console.log("Successfully Login")
           history.push('./Datajc')
-          alert('login successful') 
-          break;
-        case 202: 
-          console.log('case 2')
-          alert('login unsuccessful') 
-          break;
-        default:
-          break;
-      }
-    }).catch(function(err){
-      console.log('errror....',err);
-    })
-    
-      // submitHandler=event=>{
-      //   // const { username, uname, password, pass } = this.state;
-      //   const {history}=this.props;
-      //   const {username,password}=this.state;
-      //   if ((username==='admin') && (password==='pass')) {
-      //     console.log("Successfully Login")
-      //     history.push('./Datajc')
-      //   } else {
-      //     alert("Invalid Credentials")
-      //     console.log("Login Failed")
-      //   }
+        } else {
+          alert("Invalid Credentials")
+          console.log("Login Failed")
+        }
       
-  // const { username, uname, password, pass } = this.state;
-  //hard code authentication start
-  // const {history}=this.props;
-  // const {username,password}=this.state;
-  // if ((username==='admin') && (password==='pass')) {
-  //   console.log("Successfully Login")
-  //   history.push('./Datajc')
-  // } else {
-  //   alert("Invalid Credentials")
-  //   console.log("Login Failed")
-  // }
+  const { username, uname, password, pass } = this.state;
+  
+  const {history}=this.props;
+  const {username,password}=this.state;
+  if ((username==='admin') && (password==='pass')) {
+    console.log("Successfully Login")
+    history.push('./Datajc')
+  } else {
+    alert("Invalid Credentials")
+    console.log("Login Failed")
+  }
 //hard code authentication end
 
 //   if ((uname==={username:event.target.value}) && (pass==={password:event.target.value})) {
